@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>Add Books</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-image: url("../static/addimg.png");
+               background-size: cover;
+               background-repeat: no-repeat;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+            }
+            
+            form {
+                background-color: white;
+                max-width: 400px;
+                margin: 20px auto;
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 5px 5px 10px black;
+            }
+            
+            h1 {
+                color: #333;
+            }
+            
+            input[type="text"] {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 15px;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+                outline:none;
+            }
+            
+            button {
+                width: 100%;
+                padding: 10px;
+                background-color: lightseagreen;
+                color: #fff;
+                border: none;
+                border-radius: 3px;
+                cursor: pointer;
+            }
+            
+            button:hover {
+                opacity:0.8;
+            }
+            
+            input::placeholder {
+                color: darkslategrey;
+            }
+            html, body {
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+        </style>
+    </head>
+    <body>
+       
+        <form action="/add-book" method="POST">
+            <h2>Add Books</h2>
+            <input type="text" name="title" placeholder="Enter Book title"/>
+            <input type="text" name="author" placeholder="Enter Author name"/>
+            <input type="text" name="isbn" placeholder="Enter ISBN"/>
+            <input type="text" name="price" placeholder="Enter Book Price"/>
+            <input type="text" name="quantity" placeholder="Enter quantity"/>
+            <button>Submit</button>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Search Results</title>
+        <link rel="stylesheet" href="/styles/search.css">
+    </head>
+    <body>
+        <div class="h1">
+            <h1>Searched Books</h1>
+            <a href="/profile"><button>Home</button></a>
+        </div>
+
+        <% if (results.length > 0 ) { %>
+            <ul>
+                <% for(let i of results){ %> 
+                    <li>
+                        <p>Title: <%= i.title %></p>
+                        <p>Author: <%= i.author %></p>
+                    </li>
+                    <% } %>
+            </ul>
+        <% } 
+        else { %>
+            <p>No books found.</p>
+        <% } %>
+    </body>
+</html>

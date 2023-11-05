@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <title>My Cart</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                color: #333;
+                margin: 0;
+                padding: 0;
+            }
+            
+            .h1 {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                background-color: #333;
+                color: #fff;
+                padding: 20px;
+                margin: 0;
+            }
+            ul {
+                list-style-type: none;
+                padding: 0;
+            }
+            
+            li {
+                background-color: #fff;
+                margin: 10px;
+                padding: 20px;
+               
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                align-items: center;
+            }
+            
+            button {
+                margin-top:20px;
+                background-color: red;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;}
+                a{
+                    text-decoration: none;
+                    color:white;
+                }
+               
+            p {
+                margin: 5px 0;
+                margin-top:20px;
+            }
+
+            #quantity{
+                padding:8px 16px;
+                outline:none;
+                margin-top:20px;
+            }
+            #submit{
+                background-color: blue;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                margin-left:15px;
+            }
+            
+                    </style>
+    </head>
+    <body>
+        <div class="h1">
+            <h1>My Cart</h1>
+            <a href="/profile"><button>Home</button></a>
+        </div>
+        <ul>
+            <%for(i of book_list){%>
+                <li>
+                    <p><strong>Title: </strong><%=i.title%></p>
+                    <p><strong>Author: </strong><%=i.author%></p>
+                    <p><strong>ISBN: </strong><%=i.isbn%></p>
+                    <p><strong>Price: </strong><%=i.price%></p>
+                    <p><strong>Quantity: </strong><%=i.quantity%></p>
+                    <form action="/update-quantity" method="POST">
+                        <input type="hidden" name="book_data" value="<%= JSON.stringify(i) %>">
+                        <label for="quantity"><strong>Update Quantity:</strong></label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1">
+                        <button type="submit" id="submit" style="display:inline-block;">Update</button>
+                    </form>
+                    <button style="display:block;"><a href="/delete-cart-book/?id=<%=i._id%>">Delete Book</a></button>
+                </li>
+            <%}%>
+        </ul>
+    </body>
+</html>

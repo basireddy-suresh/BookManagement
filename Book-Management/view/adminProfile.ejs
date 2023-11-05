@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>Admin Profile page</title>
+        <style>
+            body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("profimg.jpg");
+            background-size: cover;
+             }
+            h1 {
+            background-color: lightblue;
+            color: black;
+            padding: 20px;
+            margin: 0;
+            }
+            p {
+            font-size: 25px;
+            margin: 20px;
+            padding: 10px;
+            color: black;
+            text-align: center;
+            }
+            button {
+                background-color: blue;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                margin-left:15px;
+            }
+            button:hover{
+                opacity:0.8;
+            }
+            form{
+                display:inline-block;
+            }
+            .buttons{
+                display:flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+            </style>
+    </head>
+    <body>
+        <h1>Admin Profile Page</h1>
+        <p>Name: <%=user_details.name%></p>
+        <p>Email: <%=user_details.email%></p>
+        <div class="buttons">
+        <a href="/all-books"><button>All books</button></a>
+        <a href="/get-add-book"><button>Add Books</button></a>
+        <form action="/logout" method="POST">
+            <button type="submit">Log Out</button>
+        </form>
+    </div>
+    </body>
+</html> 

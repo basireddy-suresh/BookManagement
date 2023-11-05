@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <title>Update Profile</title>
+        <style>
+            body {
+                background-image: url("../static/addimg.png");
+                background-size: cover;
+                background-repeat: no-repeat;
+                font-family: Arial, sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                height: 100vh;
+                margin: 0;
+            }
+        
+            form {
+                background: lightgrey;
+                padding: 20px;
+                border-radius: 5px;
+                box-shadow: 5px 5px 5px black;
+                max-width: 500px;                
+                text-align: center;
+            }
+        
+            h1 {
+                color: #333;
+            }
+        
+            input[type="text"],
+            input[type="password"] {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 15px;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+                outline:none;
+            }
+        
+            button {
+                background-color: #333;
+                color: #fff;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 3px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+        
+            button:hover {
+                background-color: #555;
+            }
+        
+            div {
+                padding-top: 10px;
+                font-size: 14px;
+                color: #666;
+            }
+        
+            a {
+                color: purple;
+                text-decoration: none;
+            }
+        
+            a:hover {
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="/update-profile" method="POST">
+            <h1>Update Profile</h1>
+            <input type="text" name="name" placeholder="Enter your new Name:"/>
+            <input type="password" name="password" placeholder="Enter your new Password"/>
+            <button>Save Changes</button>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>Sign Up Page</title>
+        <style>
+            body {
+    font-family: Arial, sans-serif;
+    background-image: url("../static/userimg.jpg");
+    /* background-size:cover; */
+    
+    margin: 0;
+    padding: 0;
+    }
+
+    form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px black;
+    }
+
+    h1 {
+    text-align: center;
+    color: #333;
+    }
+
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    outline:none;
+    }
+
+    button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: lightseagreen;
+    color: black;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+
+    }
+
+    button[type="submit"]:hover {
+    background-color: #0056b3;
+    }
+
+
+    input::placeholder {
+    color: slategray;
+    }
+
+
+    html, body {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    }
+        </style>
+    </head>
+    <body>
+       
+        <form action="/create-user" method="POST">
+            <h1>Sign up page</h1>
+            <input type="text" name="name" placeholder="Enter your Name"/>
+            <input type="password" name="password" placeholder="Enter your password"/>
+            <input type="email" name="email" placeholder="Enter your Email">
+            <input type="text" name="userid" placeholder="Enter your userid">
+            <button type="submit">SignUp</button>
+        </form>
+    </body>
+</html>
